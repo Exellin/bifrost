@@ -1,0 +1,24 @@
+<%= render 'shared/errors', obj: @property %>
+<div class="row">
+  <%= form_for(@property) do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :group %>
+      <%= f.text_area :group, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :pixel_value %>
+      <%= f.number_field :pixel_value, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :hex_value %>
+      <%= f.text_area :hex_value, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

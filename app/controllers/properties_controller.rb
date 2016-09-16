@@ -1,5 +1,11 @@
 class PropertiesController < ApplicationController
+  include ApplicationHelper
   before_action :require_admin
+  before_action :set_property, only: [:edit, :update, :destroy]
+  
+  def index
+    @properties = Property.all
+  end
   
   def new
     @property = Property.new
@@ -10,6 +16,7 @@ class PropertiesController < ApplicationController
   
   def update
     if @property.update(property_params)
+      redirect_to properties_path
     else
       render 'edit'
     end
@@ -18,6 +25,7 @@ class PropertiesController < ApplicationController
   def create
     @property = Property.new(property_params)
     if @property.save
+      redirect_to properties_path
     else
       render 'new'
     end
@@ -25,11 +33,16 @@ class PropertiesController < ApplicationController
   
   def destroy 
     @property.destroy
+    redirect_to properties_path
   end
   
   private
   
   def property_params
-    params.permit(:name, :group, :pixel_value, :hex_value)
+    params.require(:property).permit(:name, :group, :pixel_value, :hex_value)
+  end
+  
+  def set_property
+    @property = Property.find(params[:id])
   end
 end
