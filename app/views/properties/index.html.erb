@@ -1,28 +1,42 @@
 <div class="container">
-  <% @properties.each do |property| %>
-  <div class="row">
-    <div class="col-xs-3">
-      <%= property.group %>
-    </div>
-    <div class="col-xs-3">
-      <%= property.name %>
-    </div>
-    <% unless property.pixel_value.nil? %>
-      <div class="col-xs-3">
-        <%= property.pixel_value %>
-      </div>
-    <% end %>
-    <% unless property.hex_value.nil? %>
-      <div class="col-xs-3">
-        <%= property.hex_value %>
-      </div>
-    <% end %>
-    <div class="col-xs-3">
-      <%= link_to "edit", edit_property_path(property), class: "btn btn-xs btn-primary" %>
-      <%= link_to "delete", property_path(property), method: :delete, 
-                            data: { confirm: "Are you sure you want to delete?" },
-                            class: "btn btn-xs btn-danger" %>
-    </div>
-  </div>
+  <% @groups.each do |group| %>
+  <h3><%= group %></h3>
+    <table>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          pixel_value
+        </th>
+        <th>
+          hex_value
+        </th>
+        <th>
+          options
+        </th>
+      </tr>
+      <% @properties.each do |property| %>
+        <% if property.group == group %>
+          <tr>
+            <td>
+              <%= property.name %>
+            </td>
+            <td>
+              <%= property.pixel_value %>
+            </td>
+            <td>
+              <%= property.hex_value %>
+            </td>
+            <td>
+              <%= link_to "edit", edit_property_path(property), class: "btn btn-xs btn-primary" %>
+              <%= link_to "delete", property_path(property), method: :delete, 
+                                    data: { confirm: "Are you sure you want to delete?" },
+                                    class: "btn btn-xs btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
   <% end %>
 </div>
