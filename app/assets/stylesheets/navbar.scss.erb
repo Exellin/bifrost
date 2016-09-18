@@ -1,5 +1,5 @@
 $breakpoint: 800px;
-$nav-height: 70px;
+$nav-height: <%=Property.find_by_name("nav_height").pixel_value%>px;
 $nav-background: black;
 $nav-font-color: white;
 $link-hover-color: #2581DC;

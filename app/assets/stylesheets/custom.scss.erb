@@ -2,7 +2,7 @@
 
 .site-container {
   position: relative;
-  top: 70px;
+  top: <%=Property.find_by_name("nav_height").pixel_value%>px;
 }
 
 table {
