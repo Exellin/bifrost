@@ -6,7 +6,6 @@
 
 # Ignore bundler config.
 /.bundle
-/spring-1000
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -16,5 +15,3 @@
 /log/*
 !/log/.keep
 /tmp
-
-/.byebug_history
