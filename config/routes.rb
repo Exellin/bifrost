@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
 
   root 'pages#home'
+  resources :categories
+  resources :properties
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

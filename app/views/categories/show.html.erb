@@ -1,0 +1,39 @@
+<div class="container">
+  <h2><%= @category.name %></h2>
+    <table>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          pixel_value
+        </th>
+        <th>
+          hex_value
+        </th>
+        <th>
+          options
+        </th>
+      </tr>
+      <% @category.properties.each do |property| %>
+        <tr>
+          <td>
+            <%= property.name %>
+          </td>
+          <td>
+            <%= property.pixel_value %>
+          </td>
+          <td>
+            <%= property.hex_value %>
+          </td>
+          <td>
+            <%= link_to "edit", edit_property_path(property, :category_id => property.category_id), class: "btn btn-xs btn-primary" %>
+            <%= link_to "delete", property_path(property), method: :delete, 
+                                  data: { confirm: "Are you sure you want to delete?" },
+                                  class: "btn btn-xs btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <%= link_to "New Property", new_property_path(:category_id => @category.id) %>
+</div>

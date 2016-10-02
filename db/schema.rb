@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002183112) do
+ActiveRecord::Schema.define(version: 20161002184832) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string  "name"
+    t.integer "pixel_value"
+    t.string  "hex_value"
+    t.integer "category_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
