@@ -1,5 +1,10 @@
 @import "bootstrap";
 
+.site-container {
+    position: relative;
+    top: <%= Property.set("nav_height", "pixel_value", 70) %>px;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;

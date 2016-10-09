@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
 
-  root 'pages#home'
+  root 'pages#construction'
+  get 'about', to: 'pages#about'
+  get 'services', to: 'pages#services'
+  get 'staff', to: 'pages#staff'
+  get 'newsroom', to: 'pages#newsroom'
+  get 'contact', to: 'pages#contact'
+  get 'home', to: 'pages#home'
   resources :categories
   resources :properties
 
