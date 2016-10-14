@@ -12,6 +12,7 @@ class PropertiesController < ApplicationController
   
   def update
     if @property.update(property_params)
+      generate_stylesheet(@property.category.name)
       redirect_to category_path(@property.category)
     else
       render 'edit'
@@ -21,6 +22,7 @@ class PropertiesController < ApplicationController
   def create
     @property = Property.new(property_params)
     if @property.save
+      generate_stylesheet(@property.category.name)
       redirect_to category_path(@property.category)
     else
       render 'new'
@@ -41,5 +43,10 @@ class PropertiesController < ApplicationController
   
   def set_property
     @property = Property.find(params[:id])
+  end
+  
+  def generate_stylesheet(category)
+      stylesheet = GenerateStylesheets.new(category)
+      stylesheet.compile
   end
 end
