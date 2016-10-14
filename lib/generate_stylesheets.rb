@@ -47,14 +47,10 @@ class GenerateStylesheets
   end
   
   def asset_source
-    if env.find_asset(filename)
-      env.find_asset(filename).source
-    else
       env.append_path '/home/ubuntu/rails_projects/bifrost/tmp/generated_css'
       uri = Sprockets::URIUtils.build_asset_uri(scss_file_path)
       asset = Sprockets::UnloadedAsset.new(uri, env)
       debugger
       env.load(asset.uri).source
-    end
   end
 end
