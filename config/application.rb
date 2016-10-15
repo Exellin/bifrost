@@ -24,6 +24,5 @@ module Bifrost
     config.active_record.raise_in_transactional_callbacks = true
     config.autoload_paths += %W(#{config.root}/lib)
     config.serve_static_assets = true
-    config.assets.paths << "/home/ubuntu/rails_projects/bifrost/tmp/generated_css"
   end
 end
