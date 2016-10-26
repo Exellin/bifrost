@@ -1,5 +1,5 @@
 $breakpoint: 800px;
-$nav_height: <%= Property.set("nav_height", "pixel_value", 70) %>px;
+$nav_height: 70px;
 $nav_background: black;
 $nav_font_color: white;
 $link_hover_color: #2581DC;
