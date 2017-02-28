@@ -7,8 +7,8 @@ $link_hover_color: #2581DC;
 .navigation {
   height: $nav_height;
   background: $nav_background;
+  position: relative;
   width: 100%;
-  z-index: 99;
   ul {
     list-style: none;
     margin: 0;
