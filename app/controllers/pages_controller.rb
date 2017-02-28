@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
   
   def construction
-    render :layout => "construction"
+    @disable_navbar = true
   end
   
   def about

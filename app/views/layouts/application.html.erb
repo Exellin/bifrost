@@ -10,9 +10,14 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render 'layouts/navbar' %>
-    <div class="site-container">
+
+    <% if @disable_navbar %>
       <%= yield %>
-    </div>
+    <% else %>
+      <%= render 'layouts/navbar' %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    <% end %>
   </body>
 </html>
