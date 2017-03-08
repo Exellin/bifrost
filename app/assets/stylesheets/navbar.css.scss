@@ -1,4 +1,5 @@
-$breakpoint: 768px;
+$mobile-breakpoint: 768px;
+$tablet-breakpoint: 1024px;
 $nav_height: 200px;
 $nav_font_color: white;
 $link_hover_color: #2581DC;
@@ -25,7 +26,7 @@ $brand_width: 324px;
       line-height: $link_height;
       color: $nav_font_color;
       text-decoration: none;
-      font-size: 1.5em;
+      font-size: 1.8em;
       text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
       &:hover {
         background: $link_hover_color;
@@ -34,7 +35,7 @@ $brand_width: 324px;
   }
 }
 
-@media only screen and (max-width: $breakpoint) {
+@media only screen and (max-width: $mobile-breakpoint) {
   #nav-toggle {
     position: absolute;
     right: 18px;
@@ -80,7 +81,7 @@ $brand_width: 324px;
   }
 }
 
-@media screen and (min-width: $breakpoint) {
+@media screen and (min-width: $mobile-breakpoint) {
   .link-container {
     float: right;
     padding-top: ($nav-height - $link_height)/2;
@@ -91,5 +92,11 @@ $brand_width: 324px;
         float: left;
       }
     } 
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .link-container {
+    margin-right: $brand-width;
   }
 }
