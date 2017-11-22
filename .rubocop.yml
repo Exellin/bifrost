@@ -1,1 +1,19 @@
-inherit_from: .rubocop_todo.yml
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/migrate/**
+
+# 112 is the longest line in rails generated files
+Metrics/LineLength:
+  Max: 112
+  Exclude:
+    - config/initializers/devise.rb
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
