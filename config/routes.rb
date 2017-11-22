@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   get 'newsroom', to: 'pages#newsroom'
   get 'contact', to: 'pages#contact'
   get 'home', to: 'pages#home'
-  resources :categories
-  resources :properties
+  resources :categories do
+    resources :properties
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
