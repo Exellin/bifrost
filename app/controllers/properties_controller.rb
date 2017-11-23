@@ -46,9 +46,4 @@ class PropertiesController < ApplicationController
   def set_property
     @property = Property.find(params[:id])
   end
-
-  def generate_stylesheet(category)
-    stylesheet = GenerateStylesheets.new(category)
-    stylesheet.compile
-  end
 end
