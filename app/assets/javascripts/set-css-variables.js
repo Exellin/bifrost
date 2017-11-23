@@ -7,5 +7,5 @@ if (document.attachEvent ? document.readyState === "complete" : document.readySt
 function setCssVariables() {
   const navbar = document.querySelector('nav');
   const navbarProperties = document.querySelector('#navbar_category').dataset;
-  navbar.style.setProperty(`--${navbarProperties.name}`, navbarProperties.value + navbarProperties.suffix);
+  navbar.style.setProperty('--' + navbarProperties.name, navbarProperties.value + navbarProperties.suffix);
 }
