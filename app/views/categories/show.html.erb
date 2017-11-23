@@ -27,7 +27,7 @@
         </td>
         <td>
           <%= link_to 'edit', edit_category_property_path(@category, property) %>
-          <%= link_to 'delete', category_property_path(@category, property), method: :delete,
+          <%= button_to 'delete', [@category, property], method: :delete,
                                 data: { confirm: 'Are you sure you want to delete?' } %>
         </td>
       </tr>

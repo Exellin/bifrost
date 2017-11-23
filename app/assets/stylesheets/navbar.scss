@@ -6,16 +6,18 @@ $link_hover_color: #2581DC;
 $link_height: 60px;
 $brand_width: 324px;
 
-.navigation {
+nav {
   height: $nav_height;
   background: linear-gradient(200deg, #21afd1, #333333, #0aad1c);
   position: relative;
   width: 100%;
+
   .brand {
     z-index: 1;
     position: absolute;
     float: left;
   }
+
   ul {
     list-style: none;
     margin: 0;
@@ -33,6 +35,10 @@ $brand_width: 324px;
       }
     }
   }
+
+  #trigger {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
@@ -42,6 +48,7 @@ $brand_width: 324px;
     top: 22px;
     padding: 10px 35px 16px 0px;
     cursor: pointer;
+
     span, span:before, span:after {
       border-radius: 1px;
       height: 5px;
@@ -52,31 +59,41 @@ $brand_width: 324px;
       content: '';
       transition: all 300ms ease-in-out;
     }
+
     span:before {
       top: -10px;
     }
+
     span:after {
       bottom: -10px;
     }
-    &.active span {
-      &:before,
-      &:after {
+  }
+
+  #trigger:checked ~ label span {
+    background-color: transparent;
+
+    &:before, &:after {
       top: 0;
-      }
-      &:before {
-        transform: rotate(45deg);
-      }
-      &:after {
-        transform: rotate(-45deg);
-      }
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
     }
   }
 
-  .link-container {
+  .link-container ul {
+    display: none;
+  }
+
+  #trigger:checked ~ .link-container {
     padding-top: $nav_height;
     ul {
       background: black;
-      display: none;
+      display: block;
     }
   }
 }

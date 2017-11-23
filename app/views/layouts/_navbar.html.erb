@@ -1,33 +1,39 @@
-<section class="navigation">
-  <%= link_to image_tag("bifrost-logo.jpg"), '/home', class: "brand" %>
-  <a id="nav-toggle"><span></span></a>
-  <div class="link-container">
+<nav>
+  <%= link_to image_tag('bifrost-logo.jpg'), '/home', class: 'brand' %>
+
+  <input id='trigger' type='checkbox'>
+
+  <label for='trigger' id='nav-toggle'>
+    <span></span>
+  </label>
+
+  <div class='link-container'>
     <ul>
       <li>
-        <a href="/about">
+        <a href='/about'>
           About Us
         </a>
       </li>
       <li>
-        <a href="/services">
+        <a href='/services'>
           Services
         </a>
       </li>
       <li>
-        <a href="/staff">
+        <a href='/staff'>
           Staff
         </a>
       </li>
       <li>
-        <a href="/newsroom">
+        <a href='/newsroom'>
           Newsroom
         </a>
       </li>
       <li>
-        <a href="/contact">
+        <a href='/contact'>
           Contact Us
         </a>
       </li>
     </ul>
   </div>
-</section>
+</nav>
