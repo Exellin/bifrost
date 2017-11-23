@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  include ApplicationHelper
+  include ControllerHelper
   before_action :require_admin, except: [:construction]
   def home; end
 

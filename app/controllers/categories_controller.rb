@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  include ApplicationHelper
+  include ControllerHelper
   before_action :require_admin
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 

@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-  include ApplicationHelper
+  include ControllerHelper
   before_action :require_admin
   before_action :set_property, only: [:edit, :update, :destroy]
 
