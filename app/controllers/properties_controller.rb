@@ -39,7 +39,7 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:name, :pixel_value, :hex_value)
+    params.require(:property).permit(:name, :value, :suffix)
   end
 
   def set_property
