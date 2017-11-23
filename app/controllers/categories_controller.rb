@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
   include ControllerHelper
   before_action :require_admin
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_navbar_variables, only: [:index, :show, :new, :edit]
 
   def index
     @categories = Category.all

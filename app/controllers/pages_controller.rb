@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   include ControllerHelper
   before_action :require_admin, except: [:construction]
+  before_action :set_navbar_variables
+
   def home; end
 
   def construction

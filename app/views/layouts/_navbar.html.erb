@@ -37,3 +37,12 @@
     </ul>
   </div>
 </nav>
+
+<% if @navbar_category %>
+  <% @navbar_category.properties.each do |property| %>
+    <%= content_tag 'div', id: 'navbar_category', data: { name: property.name,
+                                                          value: property.value,
+                                                          suffix: property.suffix } do %>
+    <% end %>
+  <% end %>
+<% end %>

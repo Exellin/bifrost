@@ -2,6 +2,7 @@ class PropertiesController < ApplicationController
   include ControllerHelper
   before_action :require_admin
   before_action :set_property, only: [:edit, :update, :destroy]
+  before_action :set_navbar_variables, only: [:new, :edit]
 
   def new
     @category = Category.find(params[:category_id])
